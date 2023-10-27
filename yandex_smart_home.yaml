@@ -1,0 +1,37 @@
+ entity_config:
+   climate.ballu_oneair_asp_100_breezer:
+     name: Бризер
+     type: devices.types.thermostat.ac
+     modes:
+      fan_speed:
+          one: ['S1']
+          two: ['S2']
+          three: ['S3']
+          four: ['S4']
+          five: ['S5']
+          six: ['S6']
+          seven: ['S7']
+          min: ['Off']
+      thermostat:
+         normal: ['comfort']
+         eco: ['eco']
+         turbo: ['boost']
+         quiet: ['sleep']
+         auto: ['Auto']
+     custom_modes:
+      thermostat:
+         state_entity_id: climate.ballu_oneair_asp_100_breezer
+         state_attribute: preset_mode
+         set_mode:
+          service: climate.set_preset_mode
+          data:
+             preset_mode: "{{ mode }}"
+          target:
+             entity_id: climate.ballu_oneair_asp_100_breezer
+ filter:
+   include_entities:
+     - climate.ballu_oneair_asp_100_breezer     
+     
+     
+     
+     
