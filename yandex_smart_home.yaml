@@ -1,3 +1,4 @@
+# Пример дабавления бризера из HA в УДЯ через YaHA Cloud
  entity_config:
    climate.ballu_oneair_asp_100_breezer:
      name: Бризер
