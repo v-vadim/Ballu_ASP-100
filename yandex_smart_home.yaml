@@ -2,7 +2,7 @@
  entity_config:
    climate.ballu_oneair_asp_100_breezer:
      name: Бризер
-     type: devices.types.thermostat.ac
+     type: devices.types.ventilation
      modes:
       fan_speed:
           one: ['S1']
