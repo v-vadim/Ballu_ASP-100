@@ -156,7 +156,7 @@ ballu_asp_100_badroom:
         state_topic: "rusclimate/<device_type>/<device_id>/state/sensor/co2"
         unit_of_measurement: "ppm"
         icon: mdi:molecule-co2
-      - device: # Русукс фильтра
+      - device: # Ресурс фильтра
           identifiers: <MAC>
         name: "Filter Remaining Life"
         unique_id: "ballu_asp100_<MAC>_filter"
@@ -189,6 +189,7 @@ ballu_asp_100_badroom:
         state_topic: "rusclimate/<device_type>/<device_id>/state/diag/rssi"
         unit_of_measurement: "dBm"
         icon: mdi:wifi
+      # В тестировании, оратный отсчет не коректно передается  
       # - device:
       #      identifiers: <MAC>
       #   name: "Turbo mode timer"
@@ -220,3 +221,10 @@ ballu_asp_100_badroom:
         payload_on: "1"
         payload_off: "0"
         icon: mdi:brightness-6
+    button:
+      - device: # Сброс ресурса фильтрак
+          identifiers: 64b7085bd984    
+        name: "Reset filter"
+        unique_id: "ballu_asp100_<MAC>_reset_filter"
+        command_topic: "rusclimate/<device_type>/<device_id>/state/expendables"
+        payload_press: "100"
