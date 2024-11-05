@@ -228,3 +228,4 @@ ballu_asp_100_badroom:
         unique_id: "ballu_asp100_<MAC>_reset_filter"
         command_topic: "rusclimate/<device_type>/<device_id>/state/expendables"
         payload_press: "100"
+        enabled_by_default: false
