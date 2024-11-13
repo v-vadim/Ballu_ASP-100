@@ -221,11 +221,11 @@ ballu_asp_100_badroom:
         payload_on: "1"
         payload_off: "0"
         icon: mdi:brightness-6
-#    button: # Не работает, сьрасывается после перезагрузки бризера
-#      - device: # Сброс ресурса фильтрак
+#    button: # Требуется дополнительное тестирование
+#      - device: # Сброс ресурса фильтра
 #          identifiers: <MAC>    
 #        name: "Reset filter"
 #        unique_id: "ballu_asp100_<MAC>_reset_filter"
-#        command_topic: "rusclimate/<device_type>/<device_id>/state/expendables"
-#        payload_press: "[100]"
+#        command_topic: "rusclimate/<device_type>/<device_id>/control/expendables"
+#        payload_press: "[0]"
 #        enabled_by_default: false
