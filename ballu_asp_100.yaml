@@ -181,6 +181,14 @@ ballu_asp_100_badroom:
         suggested_display_precision: 0
         unit_of_measurement: "°C"
         icon: mdi:thermometer
+      - device: # Тамер работы турбо режима
+           identifiers: <MAC>
+        name: "Turbo mode timer"
+        unique_id: "ballu_asp100_<MAC>_timertm"
+        enabled_by_default: false
+        state_topic: "rusclimate/<device_type>/<device_id>/state/time"
+        unit_of_measurement: "s"
+        icon: mdi:timer
       - device: # Уровень сигнала
           identifiers: <MAC>
         name: "RSSI"
@@ -189,16 +197,6 @@ ballu_asp_100_badroom:
         state_topic: "rusclimate/<device_type>/<device_id>/state/diag/rssi"
         unit_of_measurement: "dBm"
         icon: mdi:wifi
-      # В тестировании, оратный отсчет не коректно передается  
-      # - device:
-      #      identifiers: <MAC>
-      #   name: "Turbo mode timer"
-      #   unique_id: "ballu_asp100_<MAC>_timertm"
-      #   #enabled_by_default: false
-      #   state_topic: "rusclimate/<device_type>/<device_id>/state/time"
-      #   # value_template: ==Нужно перевести секунды в минуты==
-      #   unit_of_measurement: "s"
-      #   icon: mdi:timer
 #
 # Переключатели
 #
