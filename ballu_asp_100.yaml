@@ -187,7 +187,7 @@ ballu_asp_100_badroom:
         unique_id: "ballu_asp100_<MAC>_timertm"
         enabled_by_default: false
         state_topic: "rusclimate/<device_type>/<device_id>/state/time"
-        unit_of_measurement: "s"
+        value_template: '{{ value | int | timestamp_custom("%M:%S") }}' 
         icon: mdi:timer
       - device: # Уровень сигнала
           identifiers: <MAC>
