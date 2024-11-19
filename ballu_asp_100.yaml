@@ -1,6 +1,6 @@
 # Ballu ASP-100
 # Проверено на версии FW 1.31
-# Для нстройки необходим заменить <MAC>, <device_type>/<device_id> на ваши данные
+# Для настройки необходим заменить <MAC>, <device_type>/<device_id> на ваши данные
 #
 # username: rusclimate
 # password: 87fcf5e2e441
@@ -164,7 +164,7 @@ ballu_asp_100_badroom:
         value_template: "{{ value.replace('[','').replace(']','') }}"
         unit_of_measurement: "%"
         icon: mdi:air-filter
-      - device: # Датчик скорости вентидятора
+      - device: # Датчик скорости вентилятора
           identifiers: <MAC>
         name: "Fan speed"
         unique_id: "ballu_asp100_<MAC>_fan_speed"
@@ -181,7 +181,7 @@ ballu_asp_100_badroom:
         suggested_display_precision: 0
         unit_of_measurement: "°C"
         icon: mdi:thermometer
-      - device: # Тамер работы турбо режима
+      - device: # Таймер работы турбо режима
            identifiers: <MAC>
         name: "Turbo mode timer"
         unique_id: "ballu_asp100_<MAC>_timertm"
@@ -210,7 +210,7 @@ ballu_asp_100_badroom:
         payload_on: "1"
         payload_off: "0"
         icon: mdi:volume-high
-      - device: # Включение авто-отключение подсветки кнопок
+      - device: # Включение авто-отключения подсветки кнопок
           identifiers: <MAC>
         name: "Auto-off Indication"
         unique_id: "ballu_asp100_<MAC>_indication"
@@ -227,3 +227,47 @@ ballu_asp_100_badroom:
 #        command_topic: "rusclimate/<device_type>/<device_id>/control/expendables"
 #        payload_press: "[0]"
 #        enabled_by_default: false
+    select:
+     -  device: # Звуки
+          identifiers: <MAC>
+        name: "Sounds"
+        unique_id: "ballu_asp100_<MAC>_sounds"
+        icon: mdi:music
+        state_topic: "rusclimate/<device_type>/<device_id>/state/amount" 
+        command_topic: "rusclimate/<device_type>/<device_id>/control/amount"
+        options:
+          - "Выключено"
+          - "Дождь"
+          - "Море"
+          - "Лес"
+          - "Птицы"
+          - "Костер"
+        value_template: >
+          {% if value == "5" %}
+            Костер
+          {% elif value == "4" %}
+            Птицы
+          {% elif value == "3" %}
+            Лес"
+          {% elif value == "2" %}
+            Море     
+          {% elif value == "1" %}
+            Дождь
+          {% else %}
+            Выключено
+          {% endif %}
+        command_template: >
+          {% if value == "Костер" %}
+            {{ 5 }}
+          {% elif value == "Птицы" %}
+            {{ 4 }}          
+          {% elif value == "Лес" %}
+            {{ 3 }}
+          {% elif value == "Море" %}
+            {{ 2 }}
+          {% elif value == "Дождь" %}
+            {{ 1 }}          
+          {% else %}
+            {{ 0 }}
+          {% endif %}
+        enabled_by_default: false
