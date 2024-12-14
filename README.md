@@ -8,8 +8,12 @@ MQTT для бризера Ballu ONEAIR ASP-100
 
 На вашем роутере необходимо настроить DNS запись mqtt.cloud.rusklimat.ru c IP вашего MQTT, после этого на несколько секунд отключить питание бризера для сброса кеша DNS.
 
-Подключиться к вашему MQTT серверу mqtt explorer'ом и найти топик rusclimate/<device_type>/<device_id>/ 
+Подключиться к вашему MQTT серверу mqtt explorer'ом и найти топик rusclimate/<device_type>/<device_id>/
 
 Заменить в конфиге ballu_asp-100.yaml <device_type>/<device_id> и < MAC> на данные вашего устройства которые отображаются в MQTT Explorer.
+Пример: 
+command_topic: rusclimate/69/c9b7536b6fe724cababcf9ca3add8/control/ 
+MAC пишется слитно, без разделителей
+identifiers: 64b1045c5316
 
 Поместить полученный конфиг в папку Packages вашего HA
