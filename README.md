@@ -16,7 +16,7 @@ MQTT для бризера Ballu ONEAIR ASP-100
 
 Пример: 
 ```yaml
-command_topic: rusclimate/59/c9b7536b6fe724cababcf9ca3add8/control/
+command_topic: rusclimate/69/c9b7536b6fe724cababcf9ca3add8/control/
 ```
 
 MAC пишется слитно, без разделителей
