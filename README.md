@@ -1,6 +1,8 @@
 # Ballu_ASP-100
 MQTT для бризера Ballu ONEAIR ASP-100
 
+Конфиг для бризера тут -> [Ballu_ASP-200](https://github.com/william-aqn/Ballu_ASP-200)
+
 Данный конфиг использует Packages https://www.home-assistant.io/docs/configuration/packages/
 
 Для работы с бризером необходимо установить и настроить MQTT брокер EMQX или Mosquitto 1.5.11 (Не работает с mosquitto выше 1.5.11)
@@ -10,14 +12,22 @@ MQTT для бризера Ballu ONEAIR ASP-100
 
 Подключиться к вашему MQTT серверу mqtt explorer'ом и найти топик rusclimate/<device_type>/<device_id>/
 
-Заменить в конфиге ballu_asp-100.yaml <device_type>/<device_id> и < MAC> на данные вашего устройства которые отображаются в MQTT Explorer.
+Заменить в конфиге [ballu_asp-100.yaml](/ballu_asp_100.yaml) <device_type>/<device_id> и < MAC> на данные вашего устройства которые отображаются в MQTT Explorer.
 
 Пример: 
-
-command_topic: rusclimate/69/c9b7536b6fe724cababcf9ca3add8/control/ 
+```yaml
+command_topic: rusclimate/69/c9b7536b6fe724cababcf9ca3add8/control/
+```
 
 MAC пишется слитно, без разделителей
-
+```yaml
 identifiers: 64b1045c5316
+```
 
 Поместить полученный конфиг в папку Packages вашего HA
+
+Не забыть активировать загрузку packages в **configuration.yaml** вашего HA
+```yaml
+homeassistant:
+  packages: !include_dir_merge_named packages/
+```
