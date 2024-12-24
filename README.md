@@ -1,7 +1,7 @@
-# Ballu_ASP-100
-MQTT для бризера Ballu ONEAIR ASP-100
+# MQTT для бризера Ballu ONEAIR ASP-100
 
-Конфиг для бризера тут -> [Ballu_ASP-200](https://github.com/william-aqn/Ballu_ASP-200)
+
+Форк для [Ballu_ASP-200](https://github.com/william-aqn/Ballu_ASP-200)
 
 Данный конфиг использует Packages https://www.home-assistant.io/docs/configuration/packages/
 
