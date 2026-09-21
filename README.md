@@ -1,5 +1,11 @@
 # MQTT для бризера Ballu ONEAIR ASP-100
 
+>
+> В настоящее время для **Ballu ONEAIR ASP-100** доступна полноценная интеграция Home Assistant — [ha-syncleo](https://github.com/DeKaN/ha-syncleo). 
+> Она позволяет управлять бризером напрямую по локальной сети через Wi-Fi (UDP), **без MQTT-брокера, подмены DNS и дополнительной настройки MQTT**.
+>
+> Инструкции из этого репозитория оставлены для истории и для тех, кто хочет использовать MQTT-вариант.
+>
 
 Форк для [Ballu_ASP-200](https://github.com/william-aqn/Ballu_ASP-200)
 
